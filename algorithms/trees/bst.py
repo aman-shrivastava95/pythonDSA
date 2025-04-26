@@ -7,7 +7,7 @@ class Node:
         self.left: Optional["Node"] = None 
         self.right: Optional["Node"] = None
 
-def insert(node: Optional["Node"], val):
+def insert(node: Optional["Node"], val) -> Node:
     if node is None:
         return Node(val)
     if val < node.val:
@@ -23,7 +23,6 @@ def inorder(node:Optional["Node"]):
         inorder(node.left)
         print(node.val, end=' ')
         inorder(node.right)
-
 
 r = Node(15)
 r = insert(r, 10)

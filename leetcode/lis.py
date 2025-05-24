@@ -19,3 +19,4 @@ class Solution:
                 j-=1
             res = max(res, lis[i])
         return res
+

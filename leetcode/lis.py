@@ -1,10 +1,18 @@
 from typing import List
+from bisect import bisect_left
 
 class Solution:
 
     def LisBinarySearch(self, nums: List[int]) -> int:
-        #TODO complete this method
-        pass
+        arr = []
+        for x in nums:
+            idx = bisect_left(arr, x)
+            if idx == len(arr):
+                arr.append(x)
+            else:
+                arr[idx] = x
+        # please note that the arr may not contain the actual lis, it will alawys have the length of the list
+        return len(arr)
 
 
     def lengthOfLIS(self, nums: List[int]) -> int:
@@ -19,4 +27,3 @@ class Solution:
                 j-=1
             res = max(res, lis[i])
         return res
-
